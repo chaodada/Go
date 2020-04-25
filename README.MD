@@ -13,3 +13,12 @@ go test
 go test -run=TestAdd
 ```
 ### 
+
+### git 
+```
+ git status
+ git add .
+ git commit -m "更新文件"
+ git status
+ git push -u origin master
+```

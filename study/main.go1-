@@ -1,0 +1,121 @@
+package main
+
+import (
+	"fmt"
+	"math"
+	"math/cmplx"
+)
+
+func add(x, y int) int {
+	return x + y
+}
+
+/**
+swap 返回两个字符串
+*/
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
+/**
+命名返回值
+*/
+func split(sum int) (returna, returnb int) {
+	returna = sum * 4 % 9
+	fmt.Printf("收拾收拾 %d \r\n", returna)
+	returnb = sum - returna
+	return
+}
+
+
+var (
+	ToBe   bool       = false
+	MaxInt uint64     = 1<<64 - 1
+	z      complex128 = cmplx.Sqrt(-5 + 12i)
+)
+
+const Pi =  3.14
+var str, name string
+
+
+
+
+const (
+	// 将 1 左移 10 位来创建一个非常大的数字
+	// 即这个数的二进制是 1 后面跟着 10 个 0
+	Big = 1 << 10 // 1 << 10  = 1*2 *2 *2 *2 *2 *2 *2 *2 *2*2
+	// 再往右移 9 位，即 Small = 1 << 1，或者说 Small = 2
+	Small = Big >> 10 //1024 >> 10  = 1024/2/2/2/2/2/2/2/2/2/2
+)
+
+func needInt(x int) int { return x*10 + 1 }
+
+
+func needFloat(x float64) float64 {
+	return x * 0.1
+}
+
+
+//var  user_id int
+func main() {
+	var hh  string ="nihao"
+	i := 199
+	str="初学GoLang"
+	var user_id=1
+	name="刘建超"
+	a, b := swap("Hello", "Word")
+
+	fmt.Println(add(42, 13))
+
+	fmt.Println(a, b)
+
+	fmt.Println(split(6))
+
+	fmt.Println(i, str, user_id, name,hh)
+
+
+	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
+	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("Type: %T Value: %v\n", z, z)
+
+
+	var ii int  // 数值类型默认为 0
+	var f float64 // 数值类型默认为 0
+	var bb bool // 默认false
+	var s string // ""
+	fmt.Printf("%v %v %v %q \n", ii, f, bb, s)
+
+
+	var x, y int = 3, 4
+
+	var ff  = math.Sqrt(float64(x*x + y*y))
+	fmt.Println(ff)
+
+	var z  = uint(ff)
+
+	fmt.Println(x, y, z)
+
+	v := 42i // 修改这里！
+	fmt.Printf("v is of type %T\n", v)
+
+
+	const World = "世界"
+	fmt.Println("Hello", World)
+	fmt.Println("Happy", Pi, "Day")
+
+	const Truth = true
+	fmt.Println("Go rules?", Truth)
+
+	fmt.Println(Big)
+	fmt.Println(Small)
+
+	//
+	//fmt.Println(needInt(Small))
+	//
+	//fmt.Println(needFloat(Small))
+	//fmt.Println(needFloat(Big))
+}
+
+
+
+

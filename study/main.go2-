@@ -1,0 +1,133 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	//sum := 0
+	//for i := 0; i <= 10; i++ {
+	//	fmt.Printf("%d + %d = %d\n",sum,i,sum+i)
+	//	sum += i
+	//}
+
+	// 前置语句 后置语句 是可选的
+	//sum := 1
+	//for ;sum< 1000; {
+	//	fmt.Printf("%d + %d = %d\n",sum,sum,sum+sum)
+	//	sum += sum
+	//}
+
+	// for 就是 go 中的 while
+	//sum := 1
+	//for sum< 1000 {
+	//	fmt.Printf("%d + %d = %d\n",sum,sum,sum+sum)
+	//	sum += sum
+	//}
+
+	// 无限循环
+	//for {
+	//	fmt.Printf("%d + %d = %d\n",1,1,1)
+	//}
+
+	//Go 的 if 语句与 for 循环类似，表达式外无需小括号 ( ) ，而大括号 { } 则是必须的。
+	//is_ok := true
+	//if is_ok {
+	//	fmt.Printf("%s \n", "ok")
+	//}
+
+	// 同 for 一样， if 语句可以在条件表达式前执行一个简单的语句。
+	// 该语句声明的变量作用域仅在 if 之内。
+	//fmt.Println(
+	//	pow(3, 2, 10),
+	//	pow(3, 3, 20),
+	//)
+
+	// Go 的 switch 语句类似于 C、C++、Java、JavaScript 和 PHP 中的，不过 Go 只运行选定的 case，而非之后所有的 case。 实际上，Go 自动提供了在这些语言中每个 case 后面所需的 break 语句。 除非以 fallthrough 语句结束，否则分支会自动终止。 Go 的另一点重要的不同在于 switch 的 case 无需为常量，且取值不必为整数。
+	//fmt.Print("Go runs on ")
+	//switch os := runtime.GOOS; os {
+	//case "darwin":
+	//	fmt.Println("OS X.")
+	//case "linux":
+	//	fmt.Println("Linux.")
+	//default:
+	//	// freebsd, openbsd,
+	//	// plan9, windows...
+	//	fmt.Printf("%s.\n", os)
+	//}
+
+
+
+
+	// switch 的 case 语句从上到下顺次执行，直到匹配成功时停止。
+	//fmt.Println("When's Saturday?")
+	//today := time.Now().Weekday()
+	//fmt.Printf("当前日期 %d \n", today)
+	//fmt.Printf("判断日期 %d \n", time.Saturday)
+	//fmt.Printf("当前日期+2 %d \n", today+2)
+	//fmt.Println()
+	//switch time.Saturday {
+	//case today + 0:
+	//	fmt.Println("Today.")
+	//case today + 1:
+	//	fmt.Println("Tomorrow.")
+	//case today + 2:
+	//	fmt.Println("In two days.")
+	//case today + 3:
+	//	fmt.Println("In two days111111111.")
+	//case today + 4:
+	//	fmt.Println("In two 66666666.")
+	//default:
+	//	fmt.Println("Too far away.")
+	//}
+
+
+
+	//没有条件的 switch
+	//没有条件的 switch 同 switch true 一样。
+	//这种形式能将一长串 if-then-else 写得更加清晰。
+	//t := time.Now()
+	//fmt.Println(t)
+	//switch {
+	//case t.Hour() < 12: //小于12.00
+	//	fmt.Println("Good morning!")
+	//case t.Hour() < 17: //小于17.00
+	//	fmt.Println("Good afternoon.")
+	//default: //默认
+	//	fmt.Println("Good evening.")
+	//}
+
+
+	// defer 语句会将函数推迟到外层函数返回之后执行。
+	//推迟调用的函数其参数会立即求值，但直到外层函数返回前该函数都不会被调用。
+	//defer fmt.Println("world")
+	//fmt.Println("hello")
+
+
+
+	//defer 栈
+	//推迟的函数调用会被压入一个栈中。当外层函数返回时，被推迟的函数会按照后进先出的顺序调用。
+	//fmt.Println("counting")
+	//
+	//for i := 0; i < 10; i++ {
+	//	defer fmt.Println(i)
+	//}
+	//
+	//fmt.Println("done")
+
+
+}
+
+func pow(x, n, lim float64) float64 {
+	// v := math.Pow(x, n); 前置语句
+	if v := math.Pow(x, n); v < lim {
+		fmt.Println(v) // 可以使用
+		return v + 100
+	} else {
+		fmt.Println(v) // 可以使用
+	}
+	// 超出作用域
+	// fmt.Println(v)
+	return lim
+}

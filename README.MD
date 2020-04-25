@@ -29,9 +29,10 @@ go run 文件名.go
  git commit -m "更新文件"
  git status
  git push -u origin master
+
+ 拉
+  cd src 
+  git init
+  git remote add origin https://github.com/chaodada/Go.git
+  git pull origin master
 ```
-
-123456
-123
-
-

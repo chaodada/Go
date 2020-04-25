@@ -12,7 +12,7 @@ func eval(a, b int, op string) int {
 	// switch
 	switch op {
 	case "+":
-		res = a + b
+		res = a + b // 会自动加break
 	case "-":
 		res = a - b
 	case "*":

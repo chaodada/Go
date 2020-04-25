@@ -30,4 +30,4 @@ go run 文件名.go
  git push -u origin master
 ```
 
-123
+123456

@@ -6,3 +6,10 @@ src：源代码文件
 pkg：包文件
 bin：相关bin文件
 ```
+### 测试文件
+```
+cd /src/example/
+go test  
+go test -run=TestAdd
+```
+### 

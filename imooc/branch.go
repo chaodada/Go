@@ -29,7 +29,7 @@ func eval(a, b int, op string) int {
 func grade(score int) string {
 	g := ""
 	switch { // 不带表达式也可以 switch
-	case score < 0 || score>100:
+	case score < 0 || score>100: // 多个条件
 		panic(fmt.Sprintf("Wrong score: %d",score)) // 报错 让程序停下来
 	case score < 60:
 		g = "D"

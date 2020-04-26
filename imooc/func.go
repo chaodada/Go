@@ -9,8 +9,6 @@ import (
 
 //函数 没有默认参数 可选参数
 
-
-
 // 函数
 func calculator(a, b int, op string) (int, error) { // 这个函数只有2 个返回值 int 类型 error 类型
 	switch op {
@@ -70,6 +68,13 @@ func sum(numbers ...int) int {
 	return s
 }
 
+// 测试指针a
+func zhizhena(n *int) {
+
+	*n += 1
+	//return *n
+}
+
 func main() {
 	// 计算器
 	fmt.Println(calculator(1, 2, "+"))  // 0  nil
@@ -94,4 +99,41 @@ func main() {
 
 	// 所有参数累加
 	fmt.Println(sum(1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+	// go 指针
+	// 指针不能运算
+	var a int = 1
+	var pa *int = &a // pa 相当于a 的引用
+	*pa += 2         // 相当于 a=2
+	fmt.Println(a)
+
+	// 参数传递
+	// 值传递 ？ （可以理解为将值传到函数中 函数外不会发生改变）  引用传递？（可以理解为将值的地址传到函数中 函数外会根据函数处理逻辑而发生改变）
+	// go 语言只有值传递 一种方式
+
+	// 值传递 与指针配合
+	var zz int = 10
+	fmt.Println(zz) // 10
+	zhizhena(&zz)   // 函数 里边加1
+	fmt.Println(zz) // 11  函数影响到外边的变量 (因为传递的是引用 如果是值传递则不会发生影响)
+
+	a, b = 100, 200
+	fmt.Println(a, b) //100, 200
+	swapa(&a, &b)
+	fmt.Println(a, b) //200, 100
+	a, b = swapb(a, b)
+	fmt.Println(a, b) //100, 200
+
+}
+
+// 数据调换位置a
+func swapa(a, b *int) { // 接受两个指针类型的参数 &a &b
+	fmt.Println(a)
+	fmt.Println(b)
+	*b, *a = *a, *b // *b=*a *a=*b
+}
+
+// 数据调换位置 b
+func swapb(a, b int) (int, int) { // 接受两个int类型的参数 a b
+	return b, a // 这样也可实现 调换位置
 }

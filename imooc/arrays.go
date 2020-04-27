@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 数组
 // range 关键字 可以返回 k v
@@ -36,7 +38,8 @@ func main() {
 			fmt.Println(j, vj)
 			for x, xj := range gridss[i][j] {
 				if x%2 == 0 {
-					xj = true
+					xj = true // 外边不生效
+					gridss[i][j][x] = true
 				}
 				fmt.Println(j, xj)
 			}
@@ -62,7 +65,43 @@ func main() {
 	// 为什么用range 遍历
 	// 1 意图明确
 
+	// 数组是值类型 遍历数组的时候修改了数组内容 在遍历外边打印数组 还是原来的内容 不会改变 // 就类似与php foreach 遍历的时候没有加&
+	printArray([5]int{1, 2, 3, 4, 5}) // 正确
+	// printArray([6]int{1, 2, 3, 4, 5}) // 报错 // 原因 [6]int 与 [5]int Go认为不是一个类型
 
-	// 数组是值类型
+	//如果想在数组遍历的时候修改数组的内容
+	// 可以使用指针
+	arr6 := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(arr6) // [1 2 3 4 5]
+	editArray(&arr6)  // 传递指针
+	fmt.Println(arr6) //[2 3 4 5 6]
+	for key, _ := range arr6 {
+		arr6[key] += 1 //此处注意 如果是直接用遍历出来的值赋值  在遍历外部 原数组不会发生改变   如果使用key 的方式修改内容 则愿数组会发生改变
+	}
+	fmt.Println(arr6) //[3 4 5 6 7]
+	for _, value := range arr6 {
+		value += 1 //此处注意 如果是直接用遍历出来的值赋值  在遍历外部 原数组不会发生改变   如果使用key 的方式修改内容 则愿数组会发生改变
+	}
+	fmt.Println(arr6) //[3 4 5 6 7]
 
+	//go语言中一般不直接使用数组
+	//go中一般会使用切片
+	//Slice 切片
+
+	arr7 := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	s := arr7[2:6] // 半开半闭区间 2 包含 6 舍弃
+	fmt.Println(s)
+
+}
+
+func editArray(arr *[5]int) {
+	for key, _ := range arr {
+		arr[key] += 1
+	}
+}
+
+func printArray(arr [5]int) { //这个函数只能接收长度为5的数组 其他长度都会报错
+	for key, value := range arr {
+		fmt.Println(key, value)
+	}
 }

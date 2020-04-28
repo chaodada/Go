@@ -36,3 +36,8 @@ go run 文件名.go
   git remote add origin https://github.com/chaodada/Go.git
   git pull origin master
 ```
+
+### Go中打印一个变量的数据类型
+```
+fmt.Println(reflect.TypeOf(a))
+```

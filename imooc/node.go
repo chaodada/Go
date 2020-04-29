@@ -8,16 +8,31 @@ type TreeNode struct {
 	left, right *TreeNode //类型是 指针
 }
 
-func (node TreeNode) print() { // (node TreeNode)
-	fmt.Print(node.value)
+func (node TreeNode) print() { // (node TreeNode)  // 显示定义和命名方法的接收者
+	fmt.Print(node.value, "    \n")
 }
 
 //func print(node TreeNode) { //  另一种写法
 //	fmt.Print(node.value)
 //}
 // 设置值
-func (node *TreeNode) setValue(value int) {
+func (node *TreeNode) setValue(value int) { // 传了一个指针   // 使用指针作为方法的接收者 只有指针才能改变结构内容  nil指针也可以调用方法
+	if node == nil {
+		fmt.Println("node to nil")
+		return
+	}
 	node.value = value
+}
+
+// 遍历数
+func (node *TreeNode) traverse() { // 中式便利     先左在中在右
+	if node == nil {
+		return
+	}
+	node.left.traverse() // 便利左侧树
+	node.print()
+	node.right.traverse() //便利右侧树
+
 }
 
 // 有工厂函数
@@ -69,29 +84,61 @@ func main() {
 	//print(root) // 另一种方法
 	fmt.Println()
 
-
-
 	root.right.right.print()
 	fmt.Println()
-    root.right.right.setValue(8)
+	root.right.right.setValue(8)
 	fmt.Println()
 	root.right.right.print()
 	fmt.Println()
-	//root2.right=&treeNode{5,nil,nil}
 
-	//fmt.Println()
-	//nodes := []TreeNode{
-	//	{value: 5},
-	//	{},
-	//	{},
-	//	{6, nil, &root},
-	//}
-	//fmt.Println(nodes)
+	root.print()
+	root.setValue(100)
+	root.print()
 
-	//fmt.Println()
-	//apps:=TreeNode{}
-	////app.value=5
-	//app.left.right=createTreeNode(8)
-	//fmt.Println(app)
+	pRoot := &root
+	pRoot.print()
+	pRoot.setValue(200)
+	pRoot.print()
+	root.print()
+
+	// nil 也可以调用方法
+
+	var psRoot *TreeNode
+	fmt.Println(psRoot)
+	psRoot.setValue(1)
+	psRoot = &root
+	psRoot.setValue(200)
+	psRoot.print()
+
+	fmt.Println()
+	var roo TreeNode
+	roo.value = 10
+	roo.left = createTreeNode(20)
+	roo.right = createTreeNode(30)
+	roo.left.left = createTreeNode(40)
+	roo.left.right = createTreeNode(50)
+	roo.right.left = createTreeNode(60)
+	roo.right.right = createTreeNode(70)
+
+	roo.traverse()
+
+	//值接收是拷贝
+
+	//值接受者 vs 指针接收者
+	//要改变内容必须使用指针接受者
+	//结构过大也考虑使用指针接收者
+	//一致性 有指针接收者 最好都是指针接收者
+
+	//值接收者 是go 语言特有
+	// 值/指针接收者 均可接收值 / 指针
+
+	// 封装
+	//名字一般
+	//UserName
+	//许多单词首字母大写连一块
+	//首字母大写
+	//public
+	//首字母小写
+	//private
 
 }

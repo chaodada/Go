@@ -41,3 +41,7 @@ go run 文件名.go
 ```
 fmt.Println(reflect.TypeOf(a))
 ```
+### 查看终端目前有没有配置代理
+```
+ curl ip.sb
+```

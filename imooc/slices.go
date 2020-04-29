@@ -136,10 +136,6 @@ func main() {
 	// append() 会导致 切片 ptr  len  cap 发生改变
 	// s=append(切片,值)
 
-
-
-
-
 }
 
 func editArrayb(arr []int) { // 传入一个切片

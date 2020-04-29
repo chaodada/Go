@@ -67,9 +67,9 @@ func main() {
 	fmt.Println(strings.ToUpper("Gopher")) // 将小写转大写
 
 	//Trim
-	fmt.Println(strings.Trim("¡¡¡Gopher!!!","¡!")) // 去两侧cutset
+	fmt.Println(strings.Trim("¡¡¡Gopher!!!", "¡!")) // 去两侧cutset
 	//TrimRight
-	fmt.Println(strings.TrimRight("¡¡!!Gopher¡¡!!","¡!")) // 去右侧cutset
+	fmt.Println(strings.TrimRight("¡¡!!Gopher¡¡!!", "¡!")) // 去右侧cutset
 	//TrimLeft
-	fmt.Println(strings.TrimLeft("¡¡!!Gopher¡¡!!","¡!")) // 去左侧cutset
+	fmt.Println(strings.TrimLeft("¡¡!!Gopher¡¡!!", "¡!")) // 去左侧cutset
 }

@@ -5,8 +5,6 @@ import (
 	"tree" //使用tree 包
 )
 
-
-
 // 为结构定义的方法必须放在同一个包内
 // 可以是不同的文件
 //如何扩充系统类型 或者别人的类型
@@ -16,7 +14,7 @@ type MyTreeNode struct {
 	node *tree.TreeNode
 }
 
-func (MyNode *MyTreeNode) postOrder() {    // 后式变遍历
+func (MyNode *MyTreeNode) postOrder() { // 后式变遍历
 	if MyNode == nil || MyNode.node == nil {
 		return
 	}
@@ -119,14 +117,11 @@ func main() {
 	//值接收者 是go 语言特有
 	// 值/指针接收者 均可接收值 / 指针
 
-
-
-
 	// 为结构定义的方法必须放在同一个包内
 	// 可以是不同的文件
 	//如何扩充系统类型 或者别人的类型
 	fmt.Println()
-	myTree:=MyTreeNode{&roo}
+	myTree := MyTreeNode{&roo}
 	myTree.postOrder()
 	fmt.Println()
 }

@@ -33,13 +33,14 @@ func printFile(filename string) {
 	}
 	scanner := bufio.NewScanner(file)
 	// 循环省略初始条件 省略递增条件 这时候可以省略分号  相当于while循环
-	for ; scanner.Scan(); {
+	for scanner.Scan() {
 		fmt.Println(scanner.Text()) // 读取文件
 	}
 }
+
 // 死循环
-func forever()  {
-	for  { // for 条件全部省略  就是死循环
+func forever() {
+	for { // for 条件全部省略  就是死循环
 		fmt.Println("abc\n")
 	}
 }
@@ -50,5 +51,5 @@ func main() {
 		convertToBin(13), //二进制为 1101
 	)
 	printFile("abc.txt")
-	forever();
+	forever()
 }

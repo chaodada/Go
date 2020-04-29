@@ -25,7 +25,7 @@ func (node *TreeNode) SetValue(value int) { // 传了一个指针   // 使用指
 }
 
 // 遍历数
-func (node *TreeNode) Traverse() {  // 中式便利     先左在中在右
+func (node *TreeNode) Traverse() { // 中式便利     先左在中在右
 	if node == nil {
 		return
 	}
@@ -48,7 +48,6 @@ func CreateTreeNode(value int) *TreeNode {
 //public
 //首字母小写
 //private
-
 
 // 为结构定义的方法必须放在同一个包内
 // 可以是不同的文件

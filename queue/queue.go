@@ -6,7 +6,7 @@ type Queue []int // 切片
 
 // 入队列
 func (q *Queue) Push(v int) {
-	fmt.Println("1123",q)
+	fmt.Println("1123", q)
 	*q = append(*q, v)
 }
 

@@ -34,26 +34,22 @@ func main() {
 	// 将s2 中的8 删除  （删除中间的元素）
 	// s2[:3]+s2[4:] 不能这么写
 	s2 = append(s2[:3], s2[4:]...) // 可变参数 ... 三个点就可以了
-	printSlice(s2) //  [2 4 6 0 0 0 0 0 0 0 0 0 0 0 0]
-
-
+	printSlice(s2)                 //  [2 4 6 0 0 0 0 0 0 0 0 0 0 0 0]
 
 	fmt.Println("1111111\n")
 
 	// 删除头元素
-	front:=s2[0]; // 2
-	s2=s2[1:] //4 6 0 0 0 0 0 0 0 0 0 0 0 0
-	fmt.Println("头元素",front,"\n")
-	fmt.Println(s2,"\n")
+	front := s2[0] // 2
+	s2 = s2[1:]    //4 6 0 0 0 0 0 0 0 0 0 0 0 0
+	fmt.Println("头元素", front, "\n")
+	fmt.Println(s2, "\n")
 	printSlice(s2)
 
 	// 删除尾元素
-	tail:=s2[len(s2)-1]
-	s2=s2[:len(s2)-1]
-	fmt.Println("尾元素",tail,"\n")
-	fmt.Println(s2,"\n")
+	tail := s2[len(s2)-1]
+	s2 = s2[:len(s2)-1]
+	fmt.Println("尾元素", tail, "\n")
+	fmt.Println(s2, "\n")
 	printSlice(s2)
-
-
 
 }

@@ -65,6 +65,4 @@ func main() {
 	//除了slice map function 的内建类型都可以作为key
 	//Struct类型不包含上述字段 也可以作为key
 
-
-
 }

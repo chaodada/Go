@@ -17,4 +17,8 @@ func main() {
 
 	// go get golang.org/x/tools/cmd/goimports 获取第三方库
 
+	//go build 来编译
+	//go install 产生 pkg 和可以执行文件
+	//go run 直接编译运行
+
 }

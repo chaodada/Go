@@ -6,9 +6,6 @@ func main() {
 	fmt.Println("Hello Word!")
 }
 
-
-
-
 // 1.1
 
 // go build  编译
@@ -24,4 +21,3 @@ func main() {
 //1）首字符可以是任意的Unicode字符或者下划线
 //2）剩余字符可以是Unicode字符、下划线、数字
 //3）字符长度不限
-

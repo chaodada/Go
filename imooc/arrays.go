@@ -84,7 +84,6 @@ func main() {
 	}
 	fmt.Println(arr6) //[3 4 5 6 7]
 
-
 }
 
 func editArray(arr *[5]int) {

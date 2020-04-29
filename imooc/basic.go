@@ -129,12 +129,6 @@ func enums() {
 // 没有char 类型 只有rune
 // 原生支持复数类型
 
-
-
-
-
-
-
 func main() {
 	fmt.Println("Hello Word!")
 	variableZeroValue()      // 调用函数

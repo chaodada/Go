@@ -39,17 +39,17 @@ func printFile(filename string) {
 }
 
 // 死循环
-func forever() {
-	for { // for 条件全部省略  就是死循环
-		fmt.Println("abc\n")
-	}
-}
+//func forever() {
+//	for { // for 条件全部省略  就是死循环
+//		fmt.Println("abc\n")
+//	}
+//}
 
 func main() {
 	fmt.Println(
 		convertToBin(5),  //二进制为 101
 		convertToBin(13), //二进制为 1101
 	)
-	printFile("abc.txt")
-	forever()
+	printFile("/Users/chaodada/GoLang/bin/loop.txt")
+	//forever()
 }

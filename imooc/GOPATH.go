@@ -21,4 +21,9 @@ func main() {
 	//go install 产生 pkg 和可以执行文件
 	//go run 直接编译运行
 
+	//GOPATH src 目录 下载的第三方包 自己的包 项目
+	//		pkg 对应src
+	//		bin 可执行文件 go Install 获得
+
+	//go 每个目录 都有一个main
 }

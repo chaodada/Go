@@ -57,7 +57,7 @@ func main() {
 
 	// 写法2 if
 	// if 条件可以赋值 但是出了if 赋值变量就失效了
-	const filename = "abc.txt"                                  // 定义文件
+	const filename = "/Users/chaodada/GoLang/bin/branch.txt"    // 定义文件
 	if contents, err := ioutil.ReadFile(filename); err != nil { // 读取文件 返回两个参数 第一个为内容 第二个为错误
 		fmt.Println(err) // 打印错误
 	} else {

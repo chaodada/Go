@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"golang.org/x/tools/container/intsets"
+	"golang.org/x/tools/container/intsets" //使用包
 )
 
 func TestSparse() {

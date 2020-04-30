@@ -45,3 +45,5 @@ fmt.Println(reflect.TypeOf(a))
 ```
  curl ip.sb
 ```
+
+### 接口

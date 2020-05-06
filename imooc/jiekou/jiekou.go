@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"imooc/jiekou/mock"
 	"imooc/jiekou/real"
+	"time"
 )
 
 // 接口
@@ -62,11 +63,16 @@ func main() {
 
 	var r Retiever
 	r = mock.Retriever{"这是内容"}
-	fmt.Println(download(r))
-	r.Print()
+	fmt.Printf("%T %v\n", r, r)
+	//fmt.Println(download(r))
+	//r.Print()
 
-	r = real.URetriever{}
-	fmt.Println(download(r))
-	r.Print()
+	r = &real.URetriever{
+		UserAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36",
+		TimeOut:   time.Minute,
+	}
+	fmt.Printf("%T %v\n", r, r)
+	//fmt.Println(download(r))
+	//r.Print()
 
 }

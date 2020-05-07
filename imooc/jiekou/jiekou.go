@@ -74,5 +74,15 @@ func main() {
 	fmt.Printf("%T %v\n", r, r)
 	//fmt.Println(download(r))
 	//r.Print()
+	inspect(r)
+}
 
+func inspect(r Retiever) {
+	fmt.Printf("%T %v\n", r, r)
+	switch v := r.(type) {
+	case mock.Retriever:
+		fmt.Println("sssss", v.Contents)
+	case *real.URetriever:
+		fmt.Println("bbbbb", v.UserAgent)
+	}
 }

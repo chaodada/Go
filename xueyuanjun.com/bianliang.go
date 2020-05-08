@@ -92,14 +92,40 @@ func main() {
 	//	fmt.Println("Grade: F")
 	//}
 
-	for j := 0; j < 5; j++ {
-		for i := 0; i < 10; i++ {
-			if i > 5 {
-				break JLoop
-			}
-			fmt.Println(i)
-		}
+	//	arr := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+	//ITERATOR1:
+	//	fmt.Println("sss")
+	//	for i := 0; i < 3; i++ {
+	//
+	//		for j := 0; j < 3; j++ {
+	//
+	//			num := arr[i][j]
+	//			if j > 1 {
+	//				break ITERATOR1
+	//			}
+	//			fmt.Println(num, i, j, arr[i][j])
+	//		}
+	//	}
+	//
+	//	fmt.Println("ss")
+
+	//x, y := 1, 2
+	//z := add(&x, &y)
+	//fmt.Printf("add(%d, %d) = %d\n", x, y, z)
+
+	var j int = 1
+
+	f := func() {
+		var i int = 1
+		fmt.Printf("i, j: %d, %d\n", i, j)
 	}
-JLoop:
-	fmt.Println("啊啊啊")
+
+	f()
+	j += 2
+	f()
+}
+func add(a, b *int) int {
+	*a *= 2
+	*b *= 3
+	return *a + *b
 }

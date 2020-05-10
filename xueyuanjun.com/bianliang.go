@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 const (
 	Sunday = iota
 	Monday
@@ -113,17 +111,138 @@ func main() {
 	//z := add(&x, &y)
 	//fmt.Printf("add(%d, %d) = %d\n", x, y, z)
 
-	var j int = 1
+	//var j int = 1
+	//
+	//f := func() {
+	//	var i int = 1
+	//	fmt.Printf("i, j: %d, %d\n", i, j)
+	//}
+	//
+	//f()
+	//j += 2
+	//f()
+	//f := addfunc(1)
+	//fmt.Println(f(2))
 
-	f := func() {
-		var i int = 1
-		fmt.Printf("i, j: %d, %d\n", i, j)
+	//str := "golang"
+	//println(len(str)) // 6
+	//
+	//arr := [3]int{1, 2, 3}
+	//print(len(arr), "\n") // 3
+	//print(cap(arr), "\n") // 3
+	//
+	//slice := arr[1:]
+	//println(len(slice)) // 2
+	//println(cap(slice)) // 2
+	//
+	//dict := map[string]int{"0": 1, "1": 2, "2": 3}
+	//println(len(dict)) // 3
+
+	//n := 10
+	//num := fibonacci(n)
+	//fmt.Printf("The %dth number of fibonacci sequence is %d\n", n, num)
+
+	//n1 := 5
+	//start1 := time.Now()
+	//num1 := fibonacci(n1)
+	//end1 := time.Now()
+	//consume1 := end1.Sub(start1).Seconds()
+	//fmt.Printf("The %dth number of fibonacci sequence is %d\n", n1, num1)
+	//fmt.Printf("It takes %f seconds to calculate the number\n", consume1)
+	//
+	//n2 := 50
+	//start2 := time.Now()
+	//num2 := fibonacci(n2)
+	//end2 := time.Now()
+	//consume2 := end2.Sub(start2).Seconds()
+	//fmt.Printf("The %dth number of fibonacci sequence is %d\n", n2, num2)
+	//fmt.Printf("It takes %f seconds to calculate the number\n", consume2)
+
+	//student := student.NewStudent(1, "学院君", true, 99.9)
+	//fmt.Println(student) // 调用类的 String方法
+	//fmt.Println(student.GetName())
+	//student.SetName("刘建超")
+	//fmt.Println(student.GetName())
+
+	//var a integer.Integer = 2
+	//if a.Equal(2) {
+	//	fmt.Println(a, "is equal to 2")
+	//}
+
+	//var a integer.Integer = 1
+	//var b integer.Integer = 2
+	//
+	//if a.Equal(b) {
+	//	fmt.Printf("%d 等于 %d\n", a, b)
+	//} else if a.LessThan(b) {
+	//	fmt.Printf("%d 小于 %d\n", a, b)
+	//} else {
+	//	fmt.Printf("%d 大于 %d\n", a, b)
+	//}
+	//
+	//a.Increase(b)
+	//fmt.Println(a)
+	//a.Decrease(b)
+	//fmt.Println(a)
+
+	//animal := animal2.Animal{"狗"}
+	//dog := dog2.Dog{&animal}
+	//fmt.Println(dog.Name.Name, "叫声:", dog.Call(), "喜爱的食物:", dog.FavorFood())
+
+	//var v4 interface{} = &v2            // 将 *interface{} 类型（指针）赋值给 interface{}
+	//var v5 interface{} = []int{1, 2, 3} // 将切片类型赋值给 interface{}
+	//var v6 interface{} = struct {       // 将自定义类型赋值给 interface{}
+	//	id   int
+	//	name string
+	//}{1, "学院君"}
+
+	//defer fmt.Println("world")
+	//
+	//fmt.Println("hello")
+
+	a := make([]int,5,...{6,7,8})
+
+}
+
+const MAX = 50
+
+var fibs [MAX]int
+
+func fibonacci(n int) int {
+	if n == 1 {
+		return 0
 	}
 
-	f()
-	j += 2
-	f()
+	if n == 2 {
+		return 1
+	}
+
+	index := n - 1
+	if fibs[index] != 0 {
+		return fibs[index]
+	}
+
+	num := fibonacci(n-1) + fibonacci(n-2)
+	fibs[index] = num
+	return num
 }
+
+//func fibonacci(n int) int {
+//	if n == 1 {
+//		return 0
+//	}
+//	if n == 2 {
+//		return 1
+//	}
+//	return fibonacci(n-1) + fibonacci(n-2)
+//}
+
+func addfunc(a int) func(b int) int {
+	return func(b int) int {
+		return a + b
+	}
+}
+
 func add(a, b *int) int {
 	*a *= 2
 	*b *= 3

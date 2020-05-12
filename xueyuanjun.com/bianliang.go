@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 const (
 	Sunday = iota
 	Monday
@@ -200,7 +202,8 @@ func main() {
 	//
 	//fmt.Println("hello")
 
-	a := make([]int,5,...{6,7,8})
+	a := make([]int, 5, 10)
+	fmt.Print(cap(a))
 
 }
 

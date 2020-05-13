@@ -46,4 +46,8 @@ fmt.Println(reflect.TypeOf(a))
  curl ip.sb
 ```
 
-### 接口
+为当前的项目创建一个 go.mod 文件。
+
+当项目不在 GOPATH 中，直接执行：
+
+go mod init

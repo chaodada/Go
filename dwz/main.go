@@ -8,9 +8,9 @@ package main
 
 func main() {
 	a := App{}
-	getEnv()
-	//a.Initialize(getEnv())
 
-	//a.run(":8881")
+	a.Initialize(getEnv())
+
+	a.run(":8881")
 
 }

@@ -46,6 +46,7 @@ func (a *App) Initialize(e *Env) {
 	fmt.Println("初始化路由成功")
 }
 
+// 初始化路由函数
 func (a *App) initializeRoutes() {
 
 	m := alice.New(a.Middlewares.LoggingHandler, a.Middlewares.RecoverHandler) // 初始化中间件
@@ -105,6 +106,7 @@ func (a *App) getShortlinkInfo(w http.ResponseWriter, r *http.Request) {
 // w表示response对象，返回给客户端的内容都在对象里处理
 // r表示客户端请求对象，包含了请求头，请求参数等等
 func (a *App) redirect(w http.ResponseWriter, r *http.Request) {
+
 	vals := mux.Vars(r)
 	//fmt.Printf("%s\n", vals["shortlink"])
 	url, err := a.Config.S.Unshorten(vals["shortlink"])
